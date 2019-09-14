@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.7.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+	id 'java'
+}
+
+group = 'com.myworkspace.security'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-jwt
+	compile group: 'org.springframework.security', name: 'spring-security-jwt', version: '1.0.2.RELEASE'
+	implementation 'com.auth0:java-jwt:3.4.1'
+    runtime group: 'com.h2database', name: 'h2', version: '1.4.199'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
